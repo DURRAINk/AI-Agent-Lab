@@ -29,7 +29,7 @@ Set up parameter:
 ```
 using Sockets
 function save_trades_quest(trades)
-    cs = connect("docker_host_ip_address", 9009)
+    cs = connect("192.168.31.101", 9009)
     while true
         payload = build_payload(take!(trades))
         write(cs, (payload))
@@ -38,7 +38,7 @@ function save_trades_quest(trades)
 end
 ```
 
-1. Remember to replace **<docker_host_ip_address>** with the actual IP address of the Docker host where your server is running.
+1. Remember to replace **<192.168.31.101>** with the actual IP address of the Docker host where your server is running.
 
 2. Update the jupyter extension to the pre-release version and then click on the reload button.
 
@@ -59,11 +59,11 @@ https://<your-hub-url>/user/<your-hub-user-name>/?token=<your-token>
 After configuring the port forwarding, you should test it. You can do this by attempting to connect to the Docker host's IP address on port 9009 from the JupyterHub server. For example, you can use the following command:
 
 ```
-telnet docker_host_ip_address 9009
+telnet 192.168.31.101 9009
 
 ```
 
-Remember to replace **<docker_host_ip_address>** with the actual IP address of the Docker host where your server is running.
+Remember to replace **<192.168.31.101>** with the actual IP address of the Docker host where your server is running.
 
 
 3. Run the Data Stream Processing Notebook
